@@ -5,7 +5,7 @@
 
 2. You can download automated build from public Docker Hub Registry:
 
-``` docker pull  ndongelo/centos-postgresql ```
+``` docker pull  andresvega565/postgres-centos ```
 
 ### Create and running a container
 
@@ -13,7 +13,7 @@
 
 (Not recommended for production use)
 
-``` docker create -it -p 5432:5432 --name postgresql94  ndongelo/centos-postgresql ```
+``` docker create -it -p 5432:5432 --name postgresql94  [nombre de github]andresvega565/centos-postgresql ```
 
 **Start container:**
 
@@ -22,7 +22,7 @@
 
 **Another way to start a postgresql container:**
 
-``` docker run -d -p 5432:5432 --name postgresql94  ndongelo/centos-postgresql ```
+``` docker run -d -p 5432:5432 --name postgresql94  [nombre de github]andresvega565/centos-postgresql ```
 
 ### Connection methods:
 
@@ -40,14 +40,14 @@
 You can create a postgresql database and superuser at launch. Use `DB_NAME`, `DB_USER` and `DB_PASS` variables.
 
 ```
-docker create -it -p 5432:5432 --name postgresql --env 'DB_USER=YOUR_USERNAME' --env 'DB_PASS=YOUR_PASSWORD' --env 'DB_NAME=YOUR_DATABASE'  ndongelo/centos-postgresql
+docker create -it -p 5432:5432 --name postgresql --env 'DB_USER=YOUR_USERNAME' --env 'DB_PASS=YOUR_PASSWORD' --env 'DB_NAME=YOUR_DATABASE'  andresvega565/postgres-centos
 
 ```
  
 If you don't set DB_PASS variable, an automatic password is generated for the PostgreSQL database user. Check to stdout/stderr log of container created:
 
 ```
-docker run -d -p 5432:5432 --name postgresql94 --env 'DB_USER=YOUR_USERNAME' --env 'DB_NAME=YOUR_DATABASE'  ndongelo/centos-postgresql
+docker run -d -p 5432:5432 --name postgresql94 --env 'DB_USER=YOUR_USERNAME' --env 'DB_NAME=YOUR_DATABASE'  andresvega565/postgres-centos
 docker logs postgresql94
 ```
 
@@ -81,4 +81,4 @@ Stop the currently running image:
 
 Update the docker image:
 
-``` docker pull ndongelo/centos-postgresql ```
+``` docker pull andresvega565/postgres-centos ```
